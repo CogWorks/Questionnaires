@@ -1,0 +1,28 @@
+T	Cognitive Failures Questionnaire
+~	The following questions are about minor mistakes which everyone makes from time to time, but some of which happen more often than others. We want to know how often these things have happened to your in the past 6 months. Please circle the appropriate number.
+H	Very often	Quite often	Occationally	Very rarely	Never
+1	Do you read something and find you haven't been thinking about it and must read it again?	4	3	2	1	0
+1	Do you find you forget why you went from one part of the house to the other?	4	3	2	1	0
+1	Do you fail to notice signposts on the road?	4	3	2	1	0
+1	Do you find you confuse right and left when giving directions?	4	3	2	1	0
+1	Do you bump into people?	4	3	2	1	0
+1	Do you find you forget whether you've turned off a light or a fire or locked the door?	4	3	2	1	0
+1	Do you fail to listen to people's names when you are meeting them?	4	3	2	1	0
+1	Do you say something and realize afterwards that it might be taken as insulting?	4	3	2	1	0
+1	Do you fail to hear people speaking to you when you are doing something else?	4	3	2	1	0
+1	Do you lose your temper and regret it?	4	3	2	1	0
+1	Do you leave important letters unanswered for days?	4	3	2	1	0
+1	Do you find you forget which way to turn on a road you know well but rarely use?	4	3	2	1	0
+1	Do you fail to see what you want in a supermarket (although it's there)?	4	3	2	1	0
+1	Do you find yourself suddenly wondering whether you've used a word correctly?	4	3	2	1	0
+1	Do you have trouble making up your mind?	4	3	2	1	0
+1	Do you find you forget appointments?	4	3	2	1	0
+1	Do you forget where you put something like a newspaper or a book?	4	3	2	1	0
+1	Do you find you accidentally throw away the thing you want and keep what you meant to throw away - as in the example of throwing away the matchbox and putting the used match in your pocket?	4	3	2	1	0
+1	Do you daydream when you ought to be listening to something?	4	3	2	1	0
+1	Do you find you forget people's names?	4	3	2	1	0
+1	Do you start doing one thing at home and get distracted into doing something else (unintentionally)?	4	3	2	1	0
+1	Do you find you can't quite remember something although it's "on the tip of your tongue"?	4	3	2	1	0
+1	Do you find you forget what you came to the shops to buy?	4	3	2	1	0
+1	Do you drop things?	4	3	2	1	0
+1	Do you find you can't think of anything to say?	4	3	2	1	0
