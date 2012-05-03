@@ -1,0 +1,32 @@
+T	Video Games
+~	Please answer the following questions about your video game playing experience. For the expertise scales, 1 = low and 7 = high.
+G	First Person Shooters (Halo, Call of Duty, Gears of War, GTA, Half-Life, Unreal etc)
+1	First Person Shooter video game expertise (PAST YEAR)	1	2	3	4	5	6	7
+1	First Person Shooter video game hours per week (PAST YEAR)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+1	First Person Shooter video game expertise (PREVIOUS YEARS)	1	2	3	4	5	6	7
+1	First Person Shooter video game hours per week (PREVIOUS YEARS)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+G	Action/Action-Sports (God of War, Mario Kart, Burnout, Madden, FIFA, etc)
+1	Action/action sports video game expertise (PAST YEAR)	1	2	3	4	5	6	7
+1	Action/action sports video game hours per week (PAST YEAR)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+1	Action/action sports video game expertise (PREVIOUS YEARS)	1	2	3	4	5	6	7
+1	Action/action sports video game hours per week (PREVIOUS YEARS)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+G	Real Time Strategy (Warcraft, Starcraft, Command & Conquer, Age of Empires, Total War, etc)
+1	Real-time strategy video game expertise (PAST YEAR)	1	2	3	4	5	6	7
+1	Real-time strategy video game hours per week (PAST YEAR)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+1	Real-time strategy video game expertise (PREVIOUS YEARS)	1	2	3	4	5	6	7
+1	Real-time strategy video game hours per week (PREVIOUS YEARS)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+G	Turn-based Strategy/Puzzle (Civilization, Sims, Puzzle Quest, Bejewled, Solitaire, etc)
+1	Turn-based strategy video game expertise (PAST YEAR)	1	2	3	4	5	6	7
+1	Turn-based strategy video game hours per week (PAST YEAR)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+1	Turn-based strategy video game expertise (PREVIOUS YEARS)	1	2	3	4	5	6	7
+1	Turn-based strategy video game hours per week (PREVIOUS YEARS)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+G	RPG/Fantasy (World of Warcraft, Final Fantasy, Fable, Oblivion, etc)
+1	RPG/fantasy video game expertise (PAST YEAR)	1	2	3	4	5	6	7
+1	RPG/fantasy video game hours per week (PAST YEAR)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+1	RPG/fantasy video game expertise (PREVIOUS YEARS)	1	2	3	4	5	6	7
+1	RPG/fantasy video game hours per week (PREVIOUS YEARS)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+G	Music (Guitar Hero, Dance Dance Revolution, Rock Band, etc)
+1	Music video game expertise (PAST YEAR)	1	2	3	4	5	6	7
+1	Music video game hours per week (PAST YEAR)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+
+1	Music video game expertise (PREVIOUS YEARS)	1	2	3	4	5	6	7
+1	Music video game hours per week (PREVIOUS YEARS)	Never	0+ to 1	1+ to 3	3+ to 5	5+ to 10	10+

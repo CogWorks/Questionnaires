@@ -25,14 +25,20 @@ class Questionnaire( QDialog ):
 
 		self.main_layout = QVBoxLayout()
 		self.questions = QGridLayout()
-		#self.questions.setFixedSize(800,600)
-		#self.questions.setSizePolicy( QSizePolicy.Maximum, QSizePolicy.Maximum )
+		self.questions.setColumnStretch( 1, 1 )
+		self.questions.setHorizontalSpacing(15)
 
 		self.description = None
 		self.title = None
 
 		self.buttonGroups = []
 
+		cols = 2
+		for v in self.data:
+			if len(v) > cols:
+				cols = len(v)
+		print cols
+				
 		row = 0
 		q = 1
 		for v in self.data:
@@ -46,6 +52,12 @@ class Questionnaire( QDialog ):
 					self.questions.addWidget( QLabel( l ), row, col )
 					col += 1
 				row += 1
+			elif v[0] == 'G':
+				l = QLabel( v[1] )
+				l.setFrameStyle( QFrame.Panel | QFrame.HLine )
+				l.setStyleSheet( "font-weight: bold;" )
+				self.questions.addWidget( l, row, 0, 1, cols+1 )
+				row += 1
 			elif v[0] == '1':
 				bg = QButtonGroup()
 				col = 0
@@ -55,7 +67,7 @@ class Questionnaire( QDialog ):
 				col += 1
 				question = QLabel( v[1] )
 				question.setWordWrap( True )
-				question.setSizePolicy( QSizePolicy.MinimumExpanding, QSizePolicy.Preferred )
+				question.setSizePolicy( QSizePolicy.Expanding, QSizePolicy.Preferred )
 				self.questions.addWidget( question, row, col )
 				col += 1
 				for l in v[2:]:
@@ -86,17 +98,14 @@ class Questionnaire( QDialog ):
 		self.main_layout.addWidget( self.doneButton )
 		self.setLayout( self.main_layout )
 
-		self.setWindowTitle( 'Questionnaire' )
+		self.setWindowTitle( self.title )
 
-		self.show()
+		self.showFullScreen()
 		self.activateWindow()
 		self.raise_()
 
-		self.setFixedSize( 900, 700 )
-
-		screen = QDesktopWidget().screenGeometry()
-		size = self.geometry()
-		self.move( ( screen.width() - size.width() ) / 2, ( screen.height() - size.height() ) / 2 )
+		self.questionsW.setMinimumWidth( self.scrollArea.geometry().width() - self.scrollArea.geometry().x() )
+		self.questionsW.updateGeometry()
 
 	def questionClick( self, button ):
 		for b in self.buttonGroups:
@@ -138,18 +147,26 @@ if __name__ == "__main__":
 	parser.add_argument( '-d', '--logdir', action = "store", dest = "logdir", default = 'data', help = 'Log dir' )
 
 	group = parser.add_mutually_exclusive_group( required = True )
-	group.add_argument( '--cfq', action = "store_true", dest = "cfq", help = 'Cognitive Failures Questionnaire' )
+	group.add_argument( '--cfq', action = "store_true", dest = "cfq", help = 'Cognitive Failures' )
+	group.add_argument( '--vg', action = "store_true", dest = "vg", help = 'Video Games' )
 
 	args = parser.parse_args()
 
 	d = datetime.datetime.now().timetuple()
 	subjectInfo = getSubjectInfo( minimal = True )
 
+	if not subjectInfo:
+		sys.exit( 1 )
+
 	results = None
 	title = None
 
 	if args.cfq:
-		results, title = doQuestionnaire( "files/cognitive_failures.txt" )
+		file = "files/cognitive_failures.txt"
+	if args.vg:
+		file = "files/video_games.txt"
+
+	results, title = doQuestionnaire( file )
 
 	if title and results:
 		if not os.path.exists( args.logdir ):
@@ -162,3 +179,6 @@ if __name__ == "__main__":
 		log = open( log_basename + ".txt", "w" )
 		log.write( "\t".join( map( str, results ) ) + "\n" )
 		log.close()
+		sys.exit( 0 )
+		
+	sys.exit( 1 )
