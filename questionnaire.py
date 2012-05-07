@@ -37,7 +37,6 @@ class Questionnaire( QDialog ):
 		for v in self.data:
 			if len(v) > cols:
 				cols = len(v)
-		print cols
 				
 		row = 0
 		q = 1
