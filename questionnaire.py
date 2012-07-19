@@ -37,7 +37,7 @@ class Questionnaire( QDialog ):
 		for v in self.data:
 			if len(v) > cols:
 				cols = len(v)
-				
+
 		row = 0
 		q = 1
 		for v in self.data:
@@ -144,6 +144,7 @@ if __name__ == "__main__":
 
 	parser = argparse.ArgumentParser( formatter_class = argparse.ArgumentDefaultsHelpFormatter )
 	parser.add_argument( '-d', '--logdir', action = "store", dest = "logdir", default = 'data', help = 'Log dir' )
+	parser.add_argument( '-s', '--subdir', action = "store_true", dest = "subdir", help = 'Place each subjects data in their own sub-directory.' )
 
 	group = parser.add_mutually_exclusive_group( required = True )
 	group.add_argument( '--cfq', action = "store_true", dest = "cfq", help = 'Cognitive Failures' )
@@ -168,10 +169,13 @@ if __name__ == "__main__":
 	results, title = doQuestionnaire( file )
 
 	if title and results:
-		if not os.path.exists( args.logdir ):
-			os.mkdir( args.logdir )
-		log_basename = os.path.join( args.logdir, "%s-%d-%d-%d_%d-%d-%d" % ( "_".join( title.split() ), d[0], d[1], d[2], d[3], d[4], d[5] ) )
 		eid = rin2id( subjectInfo['rin'] )
+		logdir = args.logdir
+		if args.subdir:
+			logdir = os.path.join( args.logdir, eid[:8] )
+		if not os.path.exists( logdir ):
+			os.makedirs(logdir)
+		log_basename = os.path.join( logdir, "%s_%s_%d-%d-%d_%d-%d-%d" % ( "_".join( title.split() ), eid[:8], d[0], d[1], d[2], d[3], d[4], d[5] ) )
 		subjectInfo['encrypted_rin'] = eid
 		subjectInfo['cipher'] = 'AES/CBC (RIJNDAEL) - 16Byte Key'
 		writeHistoryFile( log_basename, subjectInfo )
@@ -179,5 +183,5 @@ if __name__ == "__main__":
 		log.write( "\t".join( map( str, results ) ) + "\n" )
 		log.close()
 		sys.exit( 0 )
-		
+
 	sys.exit( 1 )
